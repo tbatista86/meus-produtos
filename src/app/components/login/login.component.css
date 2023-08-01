@@ -1,0 +1,31 @@
+/* login.component.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #7d6dc5; /* Defina a cor de fundo para a cor primária */
+}
+
+.mat-column-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.login-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.login-card-actions {
+  display: flex;
+  justify-content: space-between;
+}

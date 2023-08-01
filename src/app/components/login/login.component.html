@@ -1,0 +1,36 @@
+<!-- login.component.html -->
+<div class="container">
+  <mat-card class="mat-column-flex">
+    <mat-card-header>
+      <mat-card-title>{{ projectName }}</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <mat-card-content class="login-card-content">
+        <mat-form-field appearance="fill">
+          <mat-label>Email:</mat-label>
+          <input matInput formControlName="email" type="email" required />
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')"
+            >O email é obrigatório.</mat-error
+          >
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')"
+            >Email inválido.</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Senha:</mat-label>
+          <input matInput type="password" formControlName="password" required />
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')"
+            >A senha é obrigatório.</mat-error
+          >
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions class="login-card-actions">
+        <button mat-raised-button color="primary">Login</button>
+        <button mat-raised-button (click)="register()" color="warn">
+          Não tenho conta
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>
